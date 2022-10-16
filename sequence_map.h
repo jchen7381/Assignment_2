@@ -52,7 +52,7 @@ class SequenceMap{
 
     }
     
-    
+    /*
     //overloading operators << and >>
     friend std::ostream &operator<<(std::ostream &out, const SequenceMap &some_SequenceMap){
       out << some_SequenceMap.recognition_sequence_ << " ";
@@ -63,7 +63,7 @@ class SequenceMap{
 
     }
 
-    /*
+    
     friend std::ostream &operator>>(std::ostream &in, SequenceMap &some_SequenceMap){
       in >> recognition_sequence;
       for(unsigned int i = 0; i < some_SequenceMap.size(); ++i){
