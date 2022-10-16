@@ -3,7 +3,8 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <iostream>
+using namespace std;
 
 class SequenceMap{
   public:
