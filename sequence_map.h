@@ -28,14 +28,14 @@ class SequenceMap{
     ~SequenceMap() = default;
     
     //parametized constructor for a_rec_seq and an_enz_acro
-    SequenceMap(const string &a_rec_seq, const string &an_enz_acro){
+    SequenceMap(const std::string &a_rec_seq, const std::string &an_enz_acro){
       recognition_sequence_ = a_rec_seq;
       enzyme_acronyms_.push_back(an_enz_acro);
 
     }
     
     //parametized constructor for a_rec_seq
-    SequenceMap(const string &a_rec_seq){
+    SequenceMap(const std::string &a_rec_seq){
       recognition_sequence_ = a_rec_seq;
       enzyme_acronyms_.push_back("");
 

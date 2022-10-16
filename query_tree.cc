@@ -25,19 +25,19 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
 	// provide the results of find() as described in the assignment.
 	
 	//opening the file
-	ifstream input_file;
+	std::ifstream input_file;
 	input_file.open(db_filename);
 	if(input_file.fail()){
 		cout << "FILE FAILED TO OPEN" << endl;
 		exit(1);
 	}
 
-	Tree<SequenceMap> a_tree;
+	
 	std::string db_line;
 	while(getline(db_line)){
-		stringstream ss_db_line(db_line);
-		string an_enz_acro;
-		string a_reco_seq;
+		std::stringstream ss_db_line(db_line);
+		std::string an_enz_acro;
+		std::string a_reco_seq;
 
 		getline(ss_db_line, an_enz_acro, '/');
 		while(getline(db_line,a_reco_seq)){
@@ -47,7 +47,7 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
 		}
 	}
 	input_file.close();
-	string userinput_sentences;
+	std::string userinput_sentences;
 	cout << "Enter Recognition Sequences" << endl;
 	while(cin >> userinput_sentences){
 		SequenceMap query{userinput_sentences, ""};
