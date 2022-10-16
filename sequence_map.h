@@ -1,5 +1,5 @@
-#ifndef SEQUENCE_MAP_H
-#define SEQUENCE_MAP_H
+#ifndef SEQUENCEMAP_H
+#define SEQUENCEMAP_H
 
 #include <iostream>
 #include <string>
