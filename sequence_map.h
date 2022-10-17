@@ -1,9 +1,9 @@
-#ifndef SEQUENCEMAP_H
-#define SEQUENCEMAP_H
+#ifndef SEQUENCE_MAP_H
+#define SEQUENCE_MAP_H
 
-#include <iostream>
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 
 class SequenceMap{
@@ -26,18 +26,11 @@ class SequenceMap{
 
     //destructor
     ~SequenceMap() = default;
-    
-    //parametized constructor for a_rec_seq and an_enz_acro
-    SequenceMap(const std::string &a_rec_seq, const std::string &an_enz_acro){
+
+    //parametizeed constructor
+    SequenceMap(const string &a_rec_seq, const string &an_enz_acro){
       recognition_sequence_ = a_rec_seq;
       enzyme_acronyms_.push_back(an_enz_acro);
-
-    }
-    
-    //parametized constructor for a_rec_seq
-    SequenceMap(const std::string &a_rec_seq){
-      recognition_sequence_ = a_rec_seq;
-      enzyme_acronyms_.push_back("");
 
     }
 
@@ -65,11 +58,10 @@ class SequenceMap{
 
     
     friend std::ostream &operator>>(std::ostream &in, SequenceMap &some_SequenceMap){
-      in >> recognition_sequence;
+      in >> some_SequenceMap.size();
       for(unsigned int i = 0; i < some_SequenceMap.size(); ++i){
-        if
+
       }
-      return in;
     }
     */
 

@@ -5,8 +5,6 @@
 #include "avl_tree.h"
 #include "sequence_map.h"
 
-#include <fstream>
-#include <sstream>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -23,41 +21,6 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
 	// Parse input file @db_filename and feel tree @a_tree
 	// Then prompt the user for exactly three strings (do a loop) and
 	// provide the results of find() as described in the assignment.
-	
-	//opening the file
-	std::ifstream input_file;
-	input_file.open(db_filename);
-	if(input_file.fail()){
-		cout << "FILE FAILED TO OPEN" << endl;
-		exit(1);
-	}
-
-	
-	std::string db_line;
-	while(getline(db_line)){
-		std::stringstream ss_db_line(db_line);
-		std::string an_enz_acro;
-		std::string a_reco_seq;
-
-		getline(ss_db_line, an_enz_acro, '/');
-		while(getline(db_line,a_reco_seq)){
-			SequenceMap new_sequence_map(a_reco_seq, an_enz_acro);
-			a_tree.insert(new_sequence_map);
-		
-		}
-	}
-	input_file.close();
-	std::string userinput_sentences;
-	cout << "Enter Recognition Sequences" << endl;
-	while(cin >> userinput_sentences){
-		SequenceMap query{userinput_sentences, ""};
-		if(a_tree.contains(query)) {
-			a_tree.printValue(query);
-		}
-		else{
-			cout << "Not Found" << endl;
-		}
-	}
 }
 
 }  // namespace
