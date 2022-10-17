@@ -1,1 +1,58 @@
+# Assignment-2 Lists and Trees
+Become familiar with lists and trees and compare the performance of the self-balancing AVL tree. 
+
+How to run:
+
+	all:
+	make $(PROGRAM_0)
+	make $(PROGRAM_1)
+	make $(PROGRAM_2)
+
+run1avl: all
+	./$(PROGRAM_0) rebase210.txt
+
+run2avl: all
+	./$(PROGRAM_1) rebase210.txt sequences.txt
+
+# Clean obj files
+clean:
+	(rm -f *.o; rm -f test_tree; rm -f query_tree; rm -f test_tree_mod)
+
+How to provide input:
+
+Type in values for sequences with the first number as the number of sequences
+
+Input:   
+
+CC'TCGAGG
+TTA'TAA
+TC'C
+         
+Output: 
+				
+AbsI 
+AanI PsiI 
+Not Found
+
+Part 1: "Big 5" with a constructor
+
+Zero Parameter Constructor - Creates a new Points2D obeject with size_ = 0 and sequence_ = nullptr.
+
+Copy Constructor - Creates a new object by copying an existing object.
+
+Copy Assignment - Copies the members of one object to another object.
+
+Move Constructor - Creates a new object using the members of another object.
+
+Move Assignment - Moves the members of the rhs object to another object.
+
+Destructor - Deletes the dynamically allocated memory by setting sequence = nullptr and delete[] sequence.
+
+Constructor - Creates a new Points2D object using an array. Implementing the sequence using a pair of numbers in an array. 
+
+What you struggled with: 
+
+
+If I had more time:
+
 
