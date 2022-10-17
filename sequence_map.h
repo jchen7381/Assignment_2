@@ -48,8 +48,10 @@ class SequenceMap{
     
     //overloading operators << and >>
     friend std::ostream &operator<<(std::ostream &out, const SequenceMap &some_SequenceMap){
+        
         out << some_SequenceMap.recognition_sequence_ << " ";
-        out << some_SequenceMap.enzyme_acronyms_[0] << " ";
+        std::string str = {some_SequenceMap.recognition_sequence_};
+        out << str << " ";
       
         return out;
 
@@ -67,8 +69,8 @@ class SequenceMap{
     //member function merge
     void Merge(const SequenceMap &other_sequence){
         for(unsigned int i = 0; i < other_sequence.enzyme_acronyms_.size(); ++i){
-            enzyme_acronyms_.push_back(other_sequence.enzyme_acronyms_[i]);
-        }
+        enzyme_acronyms_.push_back(other_sequence.enzyme_acronyms_[i]);
+      }
     }
 
   private:
