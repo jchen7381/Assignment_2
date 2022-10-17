@@ -145,6 +145,12 @@ public:
 	{
 		remove( x, root );
 	}
+    
+    //prints the value of the node 
+    void printValue(const Comparable &x) const{
+        PrintValue(x, root);
+        
+    }
 
 private:
 	struct AvlNode

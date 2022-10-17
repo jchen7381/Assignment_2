@@ -50,9 +50,9 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
 	std::string userinput_sentences;
 	cout << "Enter Recognition Sequences" << endl;
 	while(cin >> userinput_sentences){
-		SequenceMap query{userinput_sentences, ""};
+        SequenceMap query{userinput_sentences, ""};
 		if(a_tree.contains(query)) {
-            a_tree.printTree();
+            a_tree.printValue(query);
             
 		}
 		else{
