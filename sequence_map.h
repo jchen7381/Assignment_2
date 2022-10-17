@@ -49,9 +49,9 @@ class SequenceMap{
     //overloading operators << and >>
     friend std::ostream &operator<<(std::ostream &out, const SequenceMap &some_SequenceMap){
         out << some_SequenceMap.recognition_sequence_ << " ";
-      
-        for( unsigned int i = 0; i < some_SequenceMap.recognition_sequence_.size(); ++i){
-            out << some_SequenceMap.recognition_sequence_[i] << " ";
+       
+        for( unsigned int i = 0; i < some_SequenceMap.enzyme_acronyms_.size(); ++i){
+            out << some_SequenceMap.enzyme_acronyms_[i] << " ";
         }
         
         return out;
