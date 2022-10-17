@@ -53,7 +53,7 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
         SequenceMap query{userinput_sentences, ""};
 		if(a_tree.contains(query)) {
             a_tree.printValue(query);
-            a_tree.Merge(query);
+            //a_tree.Merge(query);
 		}
 		else{
 			std::cout << "Not Found" << std::endl;
