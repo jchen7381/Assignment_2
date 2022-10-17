@@ -148,9 +148,11 @@ public:
     
     //prints the value of the node 
     void printValue(const Comparable &x) const{
-        PrintValue(x, root);
+        printValue_helper(x, root);
         
     }
+    
+    
 
 private:
 	struct AvlNode
@@ -169,7 +171,20 @@ private:
 
 	AvlNode *root;
 
-
+    void printValue_helper(const Comparable &x, AvlNode *t) const {
+        if(t == nullptr){
+            std::cout << "Not Found" << std::endl;
+        }
+        else if(t->element < x){
+            printValue_helper(x, t->right);
+        }
+        else if(x < t->element){
+            printValue_helper(x, t->left);
+        }
+        else{
+            std::cout << t->element << std::endl;
+        }
+    }
 	/**
 	 * Internal method to insert into a subtree.
 	 * x is the item to insert.
