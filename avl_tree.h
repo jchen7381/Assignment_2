@@ -175,12 +175,6 @@ private:
         if(t == nullptr){
             std::cout << "Not Found" << std::endl;
         }
-        else if(t->element < x){
-            printValue_helper(x, t->right);
-        }
-        else if(x < t->element){
-            printValue_helper(x, t->left);
-        }
         else{
             std::cout << t->element << std::endl;
         }
