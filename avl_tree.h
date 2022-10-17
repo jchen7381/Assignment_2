@@ -4,6 +4,7 @@
 #include "dsexceptions.h"
 #include <algorithm>
 #include <iostream>
+
 using namespace std;
 
 // AvlTree class
@@ -152,9 +153,11 @@ public:
         
     }
     
-    int CountNodes() const{
+    int countNodes() const{
         return countNodes_helper(root);
     }
+    
+    
     
     
 

@@ -40,21 +40,17 @@ template <typename TreeType> void TestTree(const string &db_filename, const stri
         }
     }
     input_file.close();
+    
     std::string userinput_sentences;
-    cout << "Enter Recognition Sequences" << endl;
+    int num_nodes, ratio, average_depth;
+    
     while(cin >> userinput_sentences){
-        SequenceMap query{userinput_sentences, ""};
-        if(a_tree.contains(query)) {
-            a_tree.printValue(query);
-            
-        }
-        else{
-            std::cout << "Not Found" << std::endl;
-        }
+        SequenceMap n{userinput_sentences, ""};
+        int num_nodes = a_tree.countNodes();
+        int ratio = average_depth / n
     }
 }
 
-}
 
 }  // namespace
 

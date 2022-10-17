@@ -1,9 +1,9 @@
 // Jason Chen
 // Main file for Part2(a) of Homework 2.
 // Code will compile and run after you have completed sequence_map.h.
-
-#include "avl_tree.h"
 #include "sequence_map.h"
+#include "avl_tree.h"
+
 
 #include <fstream>
 #include <sstream>
@@ -53,7 +53,7 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
         SequenceMap query{userinput_sentences, ""};
 		if(a_tree.contains(query)) {
             a_tree.printValue(query);
-            a_tree.merge(query);
+            a_tree.Merge(query);
 		}
 		else{
 			std::cout << "Not Found" << std::endl;
