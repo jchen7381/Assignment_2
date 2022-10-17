@@ -36,27 +36,26 @@ class SequenceMap{
 
     //overloading operators < and >
     bool operator<(const SequenceMap &rhs) const{
-      return(recognition_sequence_ < rhs.recognition_sequence_);
+        return(recognition_sequence_ < rhs.recognition_sequence_);
 
     }
 
     bool operator>(const SequenceMap &rhs) const{
-      return(recognition_sequence_ > rhs.recognition_sequence_);
+        return(recognition_sequence_ > rhs.recognition_sequence_);
 
     }
     
-    /*
+    
     //overloading operators << and >>
     friend std::ostream &operator<<(std::ostream &out, const SequenceMap &some_SequenceMap){
-      out << some_SequenceMap.recognition_sequence_ << " ";
-      for(unsigned int i = 0; i < size(); ++i){
-        out << some_SequenceMap.enzyme_acronyms_[i] << " ";
-      }
-      return out;
+        out << some_SequenceMap.recognition_sequence_ << " ";
+        out << some_SequenceMap.enzyme_acronyms_[0] << " ";
+      
+        return out;
 
     }
 
-    
+    /*
     friend std::ostream &operator>>(std::ostream &in, SequenceMap &some_SequenceMap){
       in >> some_SequenceMap.size();
       for(unsigned int i = 0; i < some_SequenceMap.size(); ++i){
@@ -67,14 +66,14 @@ class SequenceMap{
 
     //member function merge
     void Merge(const SequenceMap &other_sequence){
-      for(unsigned int i = 0; i < other_sequence.enzyme_acronyms_.size(); ++i){
-        enzyme_acronyms_.push_back(other_sequence.enzyme_acronyms_[i]);
-      }
+        for(unsigned int i = 0; i < other_sequence.enzyme_acronyms_.size(); ++i){
+            enzyme_acronyms_.push_back(other_sequence.enzyme_acronyms_[i]);
+        }
     }
 
   private:
     std::string recognition_sequence_;
-    vector<string> enzyme_acronyms_;
+    std::vector<std::string> enzyme_acronyms_;
 
 };
 
