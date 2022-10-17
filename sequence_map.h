@@ -33,10 +33,6 @@ class SequenceMap{
         enzyme_acronyms_.push_back(an_enz_acro);
 
     }
-    
-    SequenceMap(const std::string &a_rec_seq){
-        recognition_sequence_ = a_rec_seq;
-    }
 
     //overloading operators < and >
     bool operator<(const SequenceMap &rhs) const{
