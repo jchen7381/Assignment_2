@@ -52,10 +52,11 @@ void QueryTree(const string &db_filename, TreeType &a_tree) {
 	while(cin >> userinput_sentences){
 		SequenceMap query{userinput_sentences, ""};
 		if(a_tree.contains(query)) {
-			a_tree.printValue(query);
+            
+            
 		}
 		else{
-			cout << "Not Found" << endl;
+			std::cout << "Not Found" << std::endl;
 		}
 	}
 }
