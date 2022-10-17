@@ -48,11 +48,12 @@ class SequenceMap{
     
     //overloading operators << and >>
     friend std::ostream &operator<<(std::ostream &out, const SequenceMap &some_SequenceMap){
-        
         out << some_SequenceMap.recognition_sequence_ << " ";
         std::string str = {some_SequenceMap.recognition_sequence_};
-        out << str << " ";
-      
+        for( unsigned int i = 0; i < str.size(); ++i){
+            out << str[i] << " ";
+        }
+        
         return out;
 
     }
