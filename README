@@ -51,8 +51,10 @@ Destructor - Deletes the dynamically allocated memory by setting sequence = null
 Constructor - Creates a new Points2D object using an array. Implementing the sequence using a pair of numbers in an array. 
 
 What you struggled with: 
-
+query_tree.cc 
+line 56 : no member named Merge in AvlTree<SequenceMap> when there is a Merge() function in sequence_map.h
 
 If I had more time:
+I would not procrasinate
 
 
