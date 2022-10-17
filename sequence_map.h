@@ -30,7 +30,7 @@ class SequenceMap{
     //parametizeed constructor
     SequenceMap(const std::string &a_rec_seq, const std::string &an_enz_acro){
         recognition_sequence_ = a_rec_seq;
-        enzyme_acronyms_.push_back(an_enz_acro);
+        enzyme_acronyms_ = {an_enz_acro};
 
     }
 
