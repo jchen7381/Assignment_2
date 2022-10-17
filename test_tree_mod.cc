@@ -1,10 +1,11 @@
-// <Your name>
+// Jason Chen
 // Main file for Part2(c) of Homework 2.
 // Code will compile and run after you have completed sequence_map.h.
 
 #include "avl_tree_p2c.h"
 #include "sequence_map.h"
-
+#include <fstream>
+#include <sstream>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -17,6 +18,42 @@ namespace {
 //  empty.
 template <typename TreeType> void TestTree(const string &db_filename, const string &seq_filename, TreeType &a_tree) {
 	// Code for running Part2(c)
+    std::ifstream input_file;
+    input_file.open(db_filename);
+    if(input_file.fail()){
+        cout << "FILE FAILED TO OPEN" << endl;
+        exit(1);
+    }
+
+
+    std::string db_line;
+    while(getline(input_file, db_line)){
+        std::stringstream ss_db_line(db_line);
+        std::string an_enz_acro;
+        std::string a_reco_seq;
+
+        getline(ss_db_line, an_enz_acro, '/');
+        while(getline(ss_db_line, a_reco_seq)){
+            SequenceMap new_sequence_map(a_reco_seq, an_enz_acro);
+            a_tree.insert(new_sequence_map);
+        
+        }
+    }
+    input_file.close();
+    std::string userinput_sentences;
+    cout << "Enter Recognition Sequences" << endl;
+    while(cin >> userinput_sentences){
+        SequenceMap query{userinput_sentences, ""};
+        if(a_tree.contains(query)) {
+            a_tree.printValue(query);
+            
+        }
+        else{
+            std::cout << "Not Found" << std::endl;
+        }
+    }
+}
+
 }
 
 }  // namespace

@@ -152,6 +152,10 @@ public:
         
     }
     
+    int CountNodes() const{
+        return countNodes_helper(root);
+    }
+    
     
 
 private:
@@ -170,15 +174,35 @@ private:
 	};
 
 	AvlNode *root;
-
+    
+    //Helper functions
     void printValue_helper(const Comparable &x, AvlNode *t) const {
         if(t == nullptr){
             std::cout << "Not Found" << std::endl;
+        }
+        else if(t->element < x){
+            printValue_helper(x, t->right);
+        }
+        else if(x < t->element){
+            printValue_helper(x, t->left);
         }
         else{
             std::cout << t->element << std::endl;
         }
     }
+    
+    int countNodes_helper(AvlNode *node) const{
+        if(node == nullptr){
+            return 0;
+        }
+        else{
+            return(countNodes_helper(node->left) + countNodes_helper(node->right)+1);
+        }
+    }
+    
+    //-----------------------------------------------------------
+    
+    
 	/**
 	 * Internal method to insert into a subtree.
 	 * x is the item to insert.

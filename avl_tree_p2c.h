@@ -2,7 +2,6 @@
 #define AVL_TREE_H
 
 #include "dsexceptions.h"
-
 #include <algorithm>
 #include <iostream>
 using namespace std;
@@ -146,6 +145,18 @@ public:
     {
         remove( x, root );
     }
+    
+    //prints the value of the node
+    void printValue(const Comparable &x) const{
+        printValue_helper(x, root);
+        
+    }
+    
+    int CountNodes() const{
+        return countNodes_helper(root);
+    }
+    
+    
 
 private:
     struct AvlNode
@@ -163,8 +174,35 @@ private:
     };
 
     AvlNode *root;
-
-
+    
+    //Helper functions
+    void printValue_helper(const Comparable &x, AvlNode *t) const {
+        if(t == nullptr){
+            std::cout << "Not Found" << std::endl;
+        }
+        else if(t->element < x){
+            printValue_helper(x, t->right);
+        }
+        else if(x < t->element){
+            printValue_helper(x, t->left);
+        }
+        else{
+            std::cout << t->element << std::endl;
+        }
+    }
+    
+    int countNodes_helper(AvlNode *node) const{
+        if(node == nullptr){
+            return 0;
+        }
+        else{
+            return(countNodes_helper(node->left) + countNodes_helper(node->right)+1);
+        }
+    }
+    
+    //-----------------------------------------------------------
+    
+    
     /**
      * Internal method to insert into a subtree.
      * x is the item to insert.
@@ -416,4 +454,3 @@ private:
 };
 
 #endif
-
